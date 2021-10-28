@@ -76,7 +76,6 @@ const obj2 = {
 }
 
 const array = []
-const childrenArr = []
 let currentMainId = 0
 let currentChildrenId = 0
 
