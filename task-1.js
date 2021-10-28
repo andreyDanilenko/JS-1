@@ -70,7 +70,7 @@ const obj1 = {
                 }
             ]
         },
-        "Brand3": {
+        "BOSH": {
             "sum": 218,
             "data": [
                 {
@@ -146,11 +146,16 @@ const obj1 = {
 const arr1 = [];
 const arr2 = [];
 const arr3 = []
+const brandName = []
 firstData = [];
 secondData = [];
 // Извлекаем только обьекты брендов без total 
 // Складываем их в массив
 for (let key in obj1.result) {
+    if (key !== "total") {
+        brandName.push(key)
+    }
+
     if (obj1.result[key] !== obj1.result.total) {
         arr1.push(obj1.result[key])
     }
@@ -181,8 +186,8 @@ firstData.forEach((e, i) => {
             if (firstData[i].name === elem.date) {
                 arr2[j].forEach(date => {
                     if (date.date === elem.date) {
-                        firstData[i]['brand' + (j + 1)] = date.price;
-                        secondData[i]['brand' + (j + 1)] = date.quantity
+                        firstData[i][brandName[j]] = date.price;
+                        secondData[i][brandName[j]] = date.quantity
                     }
                 });
                 totalPrice += elem.price
