@@ -170,8 +170,8 @@ allData.forEach(obj => {
 const arr4 = [...new Set(arr3)];
 // начинаем формировать итоговые массивы
 arr4.forEach(name => {
-    firstData.push({ name: name })
-    secondData.push({ name: name })
+    firstData.push({ name })
+    secondData.push({ name })
 })
 
 firstData.forEach((e, i) => {
