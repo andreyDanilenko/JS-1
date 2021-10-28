@@ -159,7 +159,6 @@ for (let key in obj1.result) {
 arr1.forEach(data => {
     arr2.push(data.data)
 })
-
 // Поднимаем елементы на один уровень
 const allData = arr2.flat();
 // кладем в массив только дату
@@ -178,13 +177,9 @@ firstData.forEach((e, i) => {
     let totalPrice = 0;
     let totalQuantity = 0;
     arr2.forEach((subarr, j) => {
-        console.log(arr2);
         subarr.forEach(elem => {
-
             if (firstData[i].name === elem.date) {
-                console.log(elem.price);
                 arr2[j].forEach(date => {
-                    console.log(date);
                     if (date.date === elem.date) {
                         firstData[i]['brand' + (j + 1)] = date.price;
                         secondData[i]['brand' + (j + 1)] = date.quantity
@@ -194,17 +189,10 @@ firstData.forEach((e, i) => {
                 totalQuantity += elem.quantity
                 firstData[i].totalPrice = totalPrice
                 secondData[i].totalQuantity = totalQuantity
-
-
             }
         })
     })
 })
 
 // Итого
-
-
 console.log('test-1', firstData, secondData);
-
-
-
