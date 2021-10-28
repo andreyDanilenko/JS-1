@@ -84,7 +84,7 @@ let currentChildrenId = 0
 for (let keyCat in obj2.result.categories) {
     array.push({
         parent_value: currentMainId++, parent_label: keyCat, children: obj2.result.categories[keyCat].map((item) => {
-            return { children: item, parent_key: currentMainId, children_value: currentChildrenId++ }
+            return { children: item, parent_key: currentMainId - 1, children_value: currentChildrenId++ }
         })
     })
 }
