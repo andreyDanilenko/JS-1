@@ -1,4 +1,4 @@
-const obj = {
+const obj1 = {
     "result": {
         "Brand1": {
             "sum": 284,
@@ -150,9 +150,9 @@ firstData = [];
 secondData = [];
 // Извлекаем только обьекты брендов без total 
 // Складываем их в массив
-for (let key in obj.result) {
-    if (obj.result[key] !== obj.result.total) {
-        arr1.push(obj.result[key])
+for (let key in obj1.result) {
+    if (obj1.result[key] !== obj1.result.total) {
+        arr1.push(obj1.result[key])
     }
 }
 // Пробегаемся по массиву брендов и складываем только ключ data обьекта в массив
@@ -192,4 +192,9 @@ firstData.forEach((e, i) => {
 })
 
 // Итого
+
+
 console.log('test-1', firstData, secondData);
+
+
+
