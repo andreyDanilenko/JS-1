@@ -178,14 +178,24 @@ firstData.forEach((e, i) => {
     let totalPrice = 0;
     let totalQuantity = 0;
     arr2.forEach((subarr, j) => {
+        console.log(arr2);
         subarr.forEach(elem => {
+
             if (firstData[i].name === elem.date) {
-                firstData[i]['brand' + (j + 1)] = 'brand' + (j + 1);
-                secondData[i]['brand' + (j + 1)] = 'brand' + (j + 1);
+                console.log(elem.price);
+                arr2[j].forEach(date => {
+                    console.log(date);
+                    if (date.date === elem.date) {
+                        firstData[i]['brand' + (j + 1)] = date.price;
+                        secondData[i]['brand' + (j + 1)] = date.quantity
+                    }
+                });
                 totalPrice += elem.price
                 totalQuantity += elem.quantity
                 firstData[i].totalPrice = totalPrice
                 secondData[i].totalQuantity = totalQuantity
+
+
             }
         })
     })
